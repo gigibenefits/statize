@@ -9,12 +9,16 @@ var _javascriptStateMachine = _interopRequireDefault(require("javascript-state-m
 
 var _debug = _interopRequireDefault(require("debug"));
 
+var _lodash = _interopRequireDefault(require("lodash"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const debug = (0, _debug.default)('statize');
 
 const ucFirst = function (string) {
-  return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+  const camelCase = _lodash.default.camelCase(string);
+
+  return camelCase.charAt(0).toUpperCase() + camelCase.slice(1);
 };
 
 class Statize {
