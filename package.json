@@ -1,0 +1,41 @@
+{
+  "name": "statize",
+  "version": "0.0.1",
+  "description": "stateize sequelize",
+  "main": "dist",
+  "scripts": {
+    "lint": "xo",
+    "build": "babel src --out-dir dist",
+    "test": "xo && nyc mocha -- --require @babel/register"
+  },
+  "author": "Neranjen <mvneranjen@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.10.5",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/register": "^7.10.5",
+    "chai": "^4.2.0",
+    "debug": "^4.1.1",
+    "mocha": "^8.0.1",
+    "nyc": "^15.1.0",
+    "sequelize": "^6.3.3",
+    "sinon": "^9.0.2",
+    "sinon-chai": "^3.5.0",
+    "sqlite3": "^5.0.0",
+    "xo": "^0.32.1"
+  },
+  "dependencies": {
+    "javascript-state-machine": "^3.1.0"
+  },
+  "xo": {
+    "space": 2,
+    "envs": ["es2020", "node"],
+    "overrides": [
+      {
+        "files": "test/*.js",
+        "envs": ["es2020", "node", "mocha"]
+      }
+    ]
+  }
+}
