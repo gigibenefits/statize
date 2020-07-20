@@ -1,10 +1,13 @@
 import StateMachine from 'javascript-state-machine';
 import debugInit from 'debug';
+import lodash from 'lodash';
 
 const debug = debugInit('statize');
 
 const ucFirst = function (string) {
-  return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+  const camelCase = lodash.camelCase(string);
+
+  return camelCase.charAt(0).toUpperCase() + camelCase.slice(1);
 };
 
 export default class Statize {

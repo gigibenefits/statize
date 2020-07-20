@@ -26,15 +26,23 @@
     "xo": "^0.32.1"
   },
   "dependencies": {
-    "javascript-state-machine": "^3.1.0"
+    "javascript-state-machine": "^3.1.0",
+    "lodash": "^4.17.19"
   },
   "xo": {
     "space": 2,
-    "envs": ["es2020", "node"],
+    "envs": [
+      "es2020",
+      "node"
+    ],
     "overrides": [
       {
         "files": "test/*.js",
-        "envs": ["es2020", "node", "mocha"]
+        "envs": [
+          "es2020",
+          "node",
+          "mocha"
+        ]
       }
     ]
   }
