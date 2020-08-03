@@ -1,12 +1,18 @@
 {
   "name": "statize",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "stateize sequelize",
+  "homepage": "https://github.com/gigibenefits/statize",
+  "bugs": {
+    "url": "https://github.com/gigibenefits/statize/issues"
+  },
+  "keywords": ["sequelize", "state-machine", "statize"],
   "main": "dist",
   "scripts": {
     "lint": "xo",
     "build": "babel src --out-dir dist",
-    "test": "xo && nyc mocha -- --require @babel/register"
+    "test": "xo && nyc mocha -- --require @babel/register",
+    "postpublish": "PACKAGE_VERSION=$(cat package.json | grep \\\"version\\\" | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]') && git tag v$PACKAGE_VERSION && git push --tags",
   },
   "author": "Neranjen <mvneranjen@gmail.com>",
   "license": "ISC",
